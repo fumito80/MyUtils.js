@@ -1,0 +1,37 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@types/jasmine": "^2.5.53",
+    "immutable": "^3.8.1",
+    "jasmine": "^2.7.0",
+    "lodash": "^4.17.4",
+    "log4js": "^2.3.3",
+    "ramda": "^0.24.1"
+  },
+  "devDependencies": {
+    "@types/mocha": "^2.2.41",
+    "@types/node": "^8.0.17",
+    "ajv": "^5.2.2",
+    "ava": "^0.21.0",
+    "chai": "^4.1.0",
+    "mocha": "^3.4.2",
+    "power-assert": "^1.4.4",
+    "tslint": "^5.6.0",
+    "typescript": "^2.4.2"
+  },
+  "scripts": {
+    "test1": "node ./node_modules/mocha/bin/mocha test.js",
+    "test2": "ava -v",
+    "test": "jasmine",
+    "lint": "tslint -c tslint.json --force --fix '*.ts' './spec/*.ts'",
+    "tsc_init": "tsc --init",
+    "tsc": "tsc -w",
+    "start": "node test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
