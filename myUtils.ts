@@ -5,6 +5,15 @@ const config = require('./config.json');
 /**
  * Generic Functions
  */
+export function digElem(elem) {
+	return {
+  	tag: elem.tagName.toLowerCase(),
+    class: elem.className,
+    text: Array.prototype.map.call(elem.childNodes, el => el.nodeValue).join('').trim(),
+    children: Array.prototype.map.call(elem.children, el => digElem(el))
+  }
+}
+
 export const intArray = max => Array.apply(null, Array(max)).map((_, i) => i + 1);
 export const lpad = (source, digits, c = '0') => {
   return (intArray(digits).reduce((acc) => acc + c, '') + source).substr(-digits);
