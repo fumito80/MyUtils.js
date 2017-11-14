@@ -6,8 +6,8 @@ const config = require('./config.json');
  * Generic Functions
  */
 export function digElem(elem) {
-	return {
-  	tag: elem.tagName.toLowerCase(),
+  return {
+    tag: elem.tagName.toLowerCase(),
     class: elem.className,
     text: Array.prototype.map.call(elem.childNodes, el => el.nodeValue).join('').trim(),
     children: Array.prototype.map.call(elem.children, el => digElem(el))
