@@ -5,13 +5,25 @@ const config = require('./config.json');
 /**
  * Generic Functions
  */
-export function digElem(elem) {
+function checkEmpty(value) {
+  if (!value || value.length === 0) {
+    return null;
+  }
+  return value;
+}
+export function enumElem(elem) {
+  if (!elem) {
+    return {};
+  }
+  const disabled = elem.disabled;
+  const children = checkEmpty(Array.prototype.map.call(elem.children, el => enumElem(el)));
+  const text = checkEmpty(Array.prototype.filter.call(elem.childNodes, el => el.tagType === document.TEXT_NODE).map(el => el.nodeValue).join('').trim());
   return {
     tag: elem.tagName.toLowerCase(),
-    class: elem.className,
-    text: Array.prototype.map.call(elem.childNodes, el => el.nodeValue).join('').trim(),
-    children: Array.prototype.map.call(elem.children, el => digElem(el))
-  }
+    text,
+    disabled,
+    children
+  };
 }
 
 export const intArray = max => Array.apply(null, Array(max)).map((_, i) => i + 1);
