@@ -7,7 +7,7 @@ const config = require('./config.json');
  */
 function checkEmpty(value) {
   if (!value || value.length === 0) {
-    return null;
+    return undefined;
   }
   return value;
 }
