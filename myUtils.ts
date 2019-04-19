@@ -26,7 +26,7 @@ export function enumElem(elem) {
   };
 }
 
-export const intArray = max => Array.apply(null, Array(max)).map((_, i) => i + 1);
+export const range = (from, to) => [...Array(to - from + 1)].map((_, i) => i + from);
 export const lpad = (source, digits, c = '0') => {
   return (intArray(digits).reduce((acc) => acc + c, '') + source).substr(-digits);
 };
