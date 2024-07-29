@@ -23,7 +23,7 @@ then
                 . "$COMPLETION_PATH/git-completion.bash"
                 . "$COMPLETION_PATH/git-prompt.sh"
 #                PS1="$PS1"'\[\033[36m\]'  # change color to cyan
-                PS1="$PS1"`__git_ps1`   # bash function
+                PS1="$PS1"'`__git_ps1`'   # bash function
 #                PS1="$PS1"`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ [\1]/'`
         fi
 fi
